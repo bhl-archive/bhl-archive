@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>BHL-87-032 加密文档 - 白桦林档案</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #cc0000;
+            font-family: "Courier New", monospace;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .doc-preview {
+            border: 1px dashed #660000;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .redacted {
+            background: #000;
+            color: #000;
+        }
+        .redacted:hover {
+            color: #ff0000;
+        }
+        input {
+            background: #111;
+            color: #cc0000;
+            border: 1px solid #cc0000;
+            padding: 8px;
+            width: 200px;
+            text-align: center;
+            font-size: 16px;
+        }
+        button {
+            background: #220000;
+            color: #cc0000;
+            border: 1px solid #cc0000;
+            padding: 8px 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .sys-log {
+            color: #555;
+            font-size: 11px;
+            margin-top: 30px;
+            text-align: left;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>BHL-87-032：032号观测员专题档案</h2>
+    
+    <div class="doc-preview">
+        <p><b>姓名：</b><span class="redacted">██</span></p>
+        <p><b>性别：</b>女</p>
+        <p><b>出生年份：</b>1962年</p>
+        <p><b>职称：</b>高空探测员（三级）</p>
+        <p><b>最后出勤：</b>1987年3月26日 14:00-20:00</p>
+        <p><b>事件定性：</b><span class="redacted">████████</span></p>
+        <p><b>完整记录：</b><font color="#ff0000">🔒 加密锁定</font></p>
+        
+        <br>
+        <p>请输入权限密钥：</p>
+        <input type="password" id="finalKey" placeholder="密钥">
+        <button onclick="unlock()">解锁</button>
+        <p id="error2" style="color: #ff0000; display: none;">密钥错误。</p>
+    </div>
+
+    <div class="sys-log">
+        <p><b>[系统日志]</b></p>
+        <p>[1987-03-25 23:47:02] 032号观测员向外部发送信息被拦截。</p>
+        <p>拦截关键词：问候语 + 亲属关系。</p>
+        <p>拦截对象特征码：收件地址末尾两位数字。</p>
+        <p>——以上为密钥生成规则——</p>
+    </div>
+
+    <script>
+        function unlock() {
+            var input = document.getElementById('finalKey').value;
+            if (input === '222') {
+                window.location.href = 'secret.html';
+            } else {
+                document.getElementById('error2').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

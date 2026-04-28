@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>BHL-1 档案分区 - 受限访问</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00cc00;
+            font-family: "Courier New", monospace;
+            margin: 30px;
+        }
+        h2 {
+            border-bottom: 1px solid #00cc00;
+            padding-bottom: 10px;
+        }
+        .file {
+            margin: 15px 0;
+            padding: 10px;
+            border-left: 3px solid #006600;
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #ffffff;
+            background: #003300;
+        }
+        .classified {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <h2>BHL-1 绝密档案分区</h2>
+    <p>当前用户：管理员（临时提权）| 访问时间：<span id="time"></span></p>
+    <p style="color: #ff0000;">⚠ 警告：任何未经授权的复制、传播将追究法律责任。</p>
+    <hr color="#006600">
+
+    <div class="file">
+        <b>→ BHL-87-001</b> | 1987年度大气实验总纲<br>
+        <font color="#888">状态：已归档 | 密级：绝密</font>
+    </div>
+
+    <div class="file">
+        <b>→ BHL-87-029</b> | 云物理实验第29号：催化剂Ⅲ期投放记录<br>
+        <font color="#888">状态：已归档 | 密级：绝密</font>
+    </div>
+
+    <div class="file">
+        <b>→ <a href="locked.html">BHL-87-032</a></b> | 032号观测员专题档案<br>
+        <font color="#ff0000">状态：加密锁定 | 密级：最高</font><br>
+        <font color="#888">摘要：1987年3月26日异常事件关联档案。需独立密钥解密。</font>
+    </div>
+
+    <div class="file">
+        <b>→ BHL-87-044</b> | 1987年4月-6月 实验数据汇总<br>
+        <font color="#888">状态：已归档 | 密级：机密</font>
+    </div>
+
+    <script>
+        document.getElementById('time').innerText = new Date().toLocaleString();
+    </script>
+</body>
+</html>

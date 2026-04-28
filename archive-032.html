@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>BHL-1 受限数据分区验证</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #cc0000;
+            font-family: "Courier New", monospace;
+            text-align: center;
+            padding-top: 100px;
+        }
+        input {
+            background: #111;
+            color: #cc0000;
+            border: 1px solid #cc0000;
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            text-align: center;
+        }
+        button {
+            background: #330000;
+            color: #cc0000;
+            border: 1px solid #cc0000;
+            padding: 10px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #660000;
+        }
+        .prompt {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>⚠ 受限数据分区 ⚠</h2>
+    <p class="prompt">请输入独立验证密钥<br>（风向角 + 气温 + 露点，不含小数点）</p>
+    <input type="password" id="keyInput" placeholder="例：225231164">
+    <br><br>
+    <button onclick="verify()">验证</button>
+    <p id="error" style="color: #ff0000; display: none;">密钥错误。剩余尝试次数：2</p>
+
+    <script>
+        function verify() {
+            var input = document.getElementById('keyInput').value;
+            if (input === '225231164') {
+                window.location.href = 'deep.html';
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
